@@ -10,13 +10,22 @@ get_endpoints <- function() {
 
 }
 
-request <- function(endpoint, symbol) {
+request <- function(endpoint, symbol=NA, date=NA) {
 
-  filter_symbol <- paste("symbol", symbol, sep = "=") # für hier braucht es elegantere lösung
+  params <- c(symbol, date)
+  names(params) <- c("symbol", "date")
+  params <- params[!is.na(params)]
+  params <- paste(names(params), params, sep = "=", collapse = "&")
 
-  filters <- ""
-  endpoint <- "equities/eod/option-series-on-date"
 
-  url <- paste0(base_url(), endpoint, "?apiKey=", get_apikey())
+  url <- paste0(base_url(), endpoint, "?apiKey=", get_apikey(), "&", params)
+
+  response <- jsonlite::fromJSON(url)
+
+  if (class(response) != "data.frame") {
+    response <- response$data
+  }
+
+  return(response)
 
 }
