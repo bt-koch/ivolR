@@ -1,4 +1,4 @@
-set_apikey <- function(key, file_renviron = file.path(getwd(), ".Renviron"),
+set_apikey <- function(key, file_renviron = path_renviron,
                        restart = T) {
 
   if (!file.exists(file_renviron)) {
@@ -17,8 +17,10 @@ set_apikey <- function(key, file_renviron = file.path(getwd(), ".Renviron"),
 
 }
 
-get_apikey <- function(file_renviron = file.path(getwd(), ".Renviron")) {
+get_apikey <- function(file_renviron = path_renviron()) {
 
   Sys.getenv("IVOLATILITY_API_KEY")
 
 }
+
+path_renviron <- function() file.path(getwd(), ".Renviron")
