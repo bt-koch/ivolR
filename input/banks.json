@@ -1,0 +1,186 @@
+[
+  {
+    "name": "JP Morgan Chase",
+    "ticker": ["JPM"],
+    "region": ["USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Bank of America",
+    "ticker": ["BAC"],
+    "region": ["USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Citigroup",
+    "ticker": ["C", "0R01"],
+    "region": ["USA", "EUROPE"],
+    "category": "GSIB"
+  },
+  {
+    "name": "HSBC",
+    "ticker": ["HSBC", "0R01"],
+    "region": ["USA", "EUROPE"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Bank of China",
+    "ticker": ["3988", "601988"],
+    "region": ["ASIA", "ASIA"],
+    "category": "GSIB",
+    "comment": "seems to only find stock in hong kong, not in shanghai"
+  },
+  {
+    "name": "Barclays",
+    "ticker": ["BARC"],
+    "region": ["EUROPE"],
+    "category": "GSIB",
+    "comment:": "BRC double ticker in US, ivolatility returns the wrong one"
+  },
+  {
+    "name": "BNP Paribas",
+    "ticker": ["BNP"],
+    "region": ["EUROPE"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Deutsche Bank",
+    "ticker": ["DB", "DBK", "DB"],
+    "region": ["USA", "EUROPE", "EUROPE"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Goldman Sachs",
+    "ticker": ["GS"],
+    "region": ["USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Industrial and Commercial Bank of China",
+    "ticker": ["1398", "601398"],
+    "region": ["ASIA"],
+    "category": "GSIB",
+    "comment": "seems to only find stock in hong kong, not in shanghai"
+  },
+  {
+    "name": "Mitsubishi UFJ FG",
+    "ticker": ["8306", "MUFG"],
+    "region": ["ASIA", "USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Agricultural Bank of China",
+    "ticker": ["1288", "601288"],
+    "region": ["ASIA", "ASIA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Bank of New York Mellon",
+    "ticker": ["BK"],
+    "region": ["USA"],
+    "category": "GSIB",
+    "comment": "found several other ticker (europe) which don't have response"
+  },
+  {
+    "name": "China Construction Bank",
+    "ticker": ["939"],
+    "region": ["ASIA"],
+    "category": "GSIB",
+    "comment": "found several other ticker which don't have response"
+  },
+  {
+    "name": "Groupe BPCE",
+    "ticker": ["NA"],
+    "region": ["NA"],
+    "category": "GSIB",
+    "comment": "no ticker found"
+  },
+  {
+    "name": "Credit Agricole",
+    "ticker": ["ACA", "XCA"],
+    "region": ["EUROPE", "EUROPE"],
+    "category": "GSIB",
+    "comment": "ATTENTION: 'ACA' matches also 'ATLANTIC CASPIAN'"
+  },
+  {
+    "name": "ING",
+    "ticker": ["ING", "ING"],
+    "region": ["USA", "EUROPE"],
+    "category": "GSIB",
+    "comment": "ATTENTION: 'ING' in EUROPE also matches 'Ingenico Group"
+  },
+  {
+    "name": "Mizuho Financial Group",
+    "ticker": ["8411", "MFG"],
+    "region": ["ASIA", "USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Morgan Stanley",
+    "ticker": ["MS"],
+    "region": ["USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Royal Bank of Canada",
+    "ticker": ["RY", "RY"],
+    "region": ["CANADA", "USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Santander",
+    "ticker": ["SAN", "SAN"],
+    "region": ["USA", "EUROPE"],
+    "category": "GSIB",
+    "comment": "Attention: 'SAN' also matches 'Sanofi' for EUROPE"
+  },
+  {
+    "name": "Societe Generale",
+    "ticker": ["GLE", "SGE"],
+    "region": ["EUROPE", "EUROPE"],
+    "category": "GSIB",
+    "comment": "Attention: 'SGE' also matches 'SAGE GROUP' for EUROPE"
+  },
+  {
+    "name": "Standard Chartered",
+    "ticker": ["STAN", "2888"],
+    "region": ["EUROPE", "ASIA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "State Street",
+    "ticker": ["STT", "2888"],
+    "region": ["USA", "ASIA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Sumitomo Mitsui Financial Group",
+    "ticker": ["8316", "SMFG"],
+    "region": ["ASIA", "USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Toronto-Dominion Bank",
+    "ticker": ["TD", "TD"],
+    "region": ["CANADA", "USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "UBS",
+    "ticker": ["UBSG", "UBS"],
+    "region": ["EUROPE", "USA"],
+    "category": "GSIB"
+  },
+  {
+    "name": "UniCredit",
+    "ticker": ["UCG", "CRIN"],
+    "region": ["EUROPE", "EUROPE"],
+    "category": "GSIB"
+  },
+  {
+    "name": "Wells Fargo",
+    "ticker": ["WFC"],
+    "region": ["USA"],
+    "category": "GSIB"
+  }
+]
