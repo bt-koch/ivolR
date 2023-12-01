@@ -28,14 +28,16 @@ get_endpoints <- function() {
 #' @param from Date in format "YYYY-MM-DD" (character)
 #' @param to Date in format "YYYY-MM-DD" (character)
 #' @param region Equity region. Options: "USA", "EUROPE", "ASIA", "CANADA", "RUSSIA", "CRYPTO" (character)
+#' @param callPut "C" for Call or "P" for Put (character)
 #'
 #' @return data.frame of API response
 #' @export
 request <- function(endpoint, symbol=NA_character_, date=NA_character_,
-                    from=NA_character_, to=NA_character_, region=NA_character_) {
+                    from=NA_character_, to=NA_character_, region=NA_character_,
+                    callPut=NA_character_) {
 
-  params <- c(symbol, date, from, to, region)
-  names(params) <- c("symbol", "date", "from", "to", "region")
+  params <- c(symbol, date, from, to, region, callPut)
+  names(params) <- c("symbol", "date", "from", "to", "region", "callPut")
   params <- params[!is.na(params)]
   params <- paste(names(params), params, sep = "=", collapse = "&")
 
@@ -43,7 +45,9 @@ request <- function(endpoint, symbol=NA_character_, date=NA_character_,
   url <- paste0(base_url(), endpoint, "?apiKey=", get_apikey(), "&", params)
   url <- gsub(" ", "%20", url)
 
-  response <- tryCatch(jsonlite::fromJSON(url), error = function(e) return(NA))
+  response <- tryCatch(jsonlite::fromJSON(url),
+                       error = function(e) return(e),
+                       warning = function(w) w)
 
   # if (class(response) != "data.frame" & !is.na(response)) {
   #   response <- response$data
@@ -53,8 +57,8 @@ request <- function(endpoint, symbol=NA_character_, date=NA_character_,
 
 }
 
-request_alltickers <- function(symbol, from, to) {
-  response <- data.frame()
+request_alltickers <- function(symbol, from, to, callPut=NA_character_) {
+  response <- data.table::data.table()
   for (r in get_regions()) {
     cat("\nRetrieve Tickers for Region", r, "\n")
     timespan <- seq(as.Date(from), as.Date(to), by = "days")
@@ -64,8 +68,11 @@ request_alltickers <- function(symbol, from, to) {
       temp <- request(endpoint = "equities/eod/option-series-on-date",
                       symbol = symbol,
                       date = d,
-                      region = r)
-      response <- rbind(response, temp)
+                      region = r,
+                      callPut = callPut)
+      temp <- data.table::as.data.table(temp)
+      temp <- temp[, region = r]
+      response <- rbind(response, temp, fill = T)
       response <- unique(response)
       i <- i+1
     }
