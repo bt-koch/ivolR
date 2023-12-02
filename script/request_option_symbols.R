@@ -7,9 +7,7 @@ from <- "2022-01-01"
 to <- "2023-06-30"
 banks <- jsonlite::fromJSON("input/banks.json")
 
-
-
-for (b in 16:nrow(banks)) {
+for (b in 1:nrow(banks)) {
 
   bank <- get_bank_info(banks, banks[b,]$name)
   cat("\nRetrieve data for", bank$name)
