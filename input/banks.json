@@ -100,14 +100,14 @@
     "ticker": ["ACA", "XCA"],
     "region": ["EUROPE", "EUROPE"],
     "category": "GSIB",
-    "comment": "ATTENTION: 'ACA' matches also 'ATLANTIC CASPIAN'"
+    "comment": "ATTENTION: 'ACA' matches also 'ATLANTIC CASPIAN' in EUROPE. Different Exchange, clean after getting option symbol"
   },
   {
     "name": "ING",
     "ticker": ["ING", "ING"],
     "region": ["USA", "EUROPE"],
     "category": "GSIB",
-    "comment": "ATTENTION: 'ING' in EUROPE also matches 'Ingenico Group"
+    "comment": "ATTENTION: 'ING' in EUROPE also matches 'Ingenico Group'. Different Exchange, clean after getting option symbol"
   },
   {
     "name": "Mizuho Financial Group",
@@ -132,14 +132,14 @@
     "ticker": ["SAN", "SAN"],
     "region": ["USA", "EUROPE"],
     "category": "GSIB",
-    "comment": "Attention: 'SAN' also matches 'Sanofi' for EUROPE"
+    "comment": "Attention: 'SAN' also matches 'Sanofi' for EUROPE. Different exchange, clean later."
   },
   {
     "name": "Societe Generale",
     "ticker": ["GLE", "SGE"],
     "region": ["EUROPE", "EUROPE"],
     "category": "GSIB",
-    "comment": "Attention: 'SGE' also matches 'SAGE GROUP' for EUROPE"
+    "comment": "Attention: 'SGE' also matches 'SAGE GROUP' for EUROPE. Different exchange, clean later."
   },
   {
     "name": "Standard Chartered",
