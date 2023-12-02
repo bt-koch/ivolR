@@ -39,7 +39,7 @@ for (file in list.files(path_symbols, pattern = "option_symbol_.*\\.rds")[1:2]) 
   if (!is.na(output_path)) {
     saveRDS(res, file = file.path(output_path, paste0(output_name, ".rds")))
   } else {
-    assign(output_name, df)
+    assign(output_name, req)
   }
 
 }
