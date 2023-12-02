@@ -1,4 +1,12 @@
-set_apikey <- function(key, file_renviron = path_renviron,
+#' set_apikey
+#'
+#' @param key
+#' @param file_renviron
+#' @param restart
+#'
+#' @return
+#' @export
+set_apikey <- function(key, file_renviron = path_renviron(),
                        restart = T) {
 
   if (!file.exists(file_renviron)) {
@@ -17,6 +25,12 @@ set_apikey <- function(key, file_renviron = path_renviron,
 
 }
 
+#' get_apikey
+#'
+#' @param file_renviron
+#'
+#' @return API key
+#' @export
 get_apikey <- function(file_renviron = path_renviron()) {
 
   Sys.getenv("IVOLATILITY_API_KEY")
