@@ -57,42 +57,42 @@ request <- function(endpoint, symbol=NA_character_, date=NA_character_,
 
 }
 
-request_alltickers <- function(symbol, from, to, callPut=NA_character_) {
-  response <- data.table::data.table()
-  for (r in get_regions()) {
-    cat("\nRetrieve Tickers for Region", r, "\n")
-    timespan <- seq(as.Date(from), as.Date(to), by = "days")
-    i <- 1
-    for (d in as.character(timespan)) {
-      cat(" Request", i, "of", length(timespan), "\r")
-      temp <- request(endpoint = "equities/eod/option-series-on-date",
-                      symbol = symbol,
-                      date = d,
-                      region = r,
-                      callPut = callPut)
-      temp <- data.table::as.data.table(temp)
-      temp <- temp[, region = r]
-      response <- rbind(response, temp, fill = T)
-      response <- unique(response)
-      i <- i+1
-    }
-  }
-  return(response)
-}
+# request_alltickers <- function(symbol, from, to, callPut=NA_character_) {
+#   response <- data.table::data.table()
+#   for (r in get_regions()) {
+#     cat("\nRetrieve Tickers for Region", r, "\n")
+#     timespan <- seq(as.Date(from), as.Date(to), by = "days")
+#     i <- 1
+#     for (d in as.character(timespan)) {
+#       cat(" Request", i, "of", length(timespan), "\r")
+#       temp <- request(endpoint = "equities/eod/option-series-on-date",
+#                       symbol = symbol,
+#                       date = d,
+#                       region = r,
+#                       callPut = callPut)
+#       temp <- data.table::as.data.table(temp)
+#       temp <- temp[, region = r]
+#       response <- rbind(response, temp, fill = T)
+#       response <- unique(response)
+#       i <- i+1
+#     }
+#   }
+#   return(response)
+# }
 
-request_alloptions <- function(symbols, from, to) {
-  response <- list()
-  i <- 1
-  for (s in symbols) {
-    cat("Request", i, "of", length(symbols), "\r")
-    temp <- request(endpoint = "equities/eod/single-stock-option",
-                    symbol = s,
-                    from = from,
-                    to = to)
-    response[[s]] <- temp
-    i <- i+1
-  }
-  return(response)
-}
+# request_alloptions <- function(symbols, from, to) {
+#   response <- list()
+#   i <- 1
+#   for (s in symbols) {
+#     cat("Request", i, "of", length(symbols), "\r")
+#     temp <- request(endpoint = "equities/eod/single-stock-option",
+#                     symbol = s,
+#                     from = from,
+#                     to = to)
+#     response[[s]] <- temp
+#     i <- i+1
+#   }
+#   return(response)
+# }
 
 get_regions <- function() return(c("USA", "EUROPE", "ASIA", "CANADA"))
