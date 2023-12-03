@@ -58,7 +58,7 @@
   {
     "name": "Industrial and Commercial Bank of China",
     "ticker": ["1398", "601398"],
-    "region": ["ASIA"],
+    "region": ["ASIA", "ASIA"],
     "category": "GSIB",
     "comment": "seems to only find stock in hong kong, not in shanghai"
   },
