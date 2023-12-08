@@ -35,19 +35,19 @@
     "ticker": ["BARC"],
     "region": ["EUROPE"],
     "category": "GSIB",
-    "comment:": "BRC double ticker in US, ivolatility returns the wrong one"
+    "comment": "BRC double ticker in US, ivolatility returns the wrong one"
   },
   {
     "name": "BNP Paribas",
     "ticker": ["BNP"],
     "region": ["EUROPE"],
-    "category": "GSIB"
+    "category": ["GSIB", "SSM"]
   },
   {
     "name": "Deutsche Bank",
     "ticker": ["DB", "DBK", "DB"],
     "region": ["USA", "EUROPE", "EUROPE"],
-    "category": "GSIB"
+    "category": ["GSIB", "SSM"]
   },
   {
     "name": "Goldman Sachs",
@@ -99,14 +99,14 @@
     "name": "Credit Agricole",
     "ticker": ["ACA", "XCA"],
     "region": ["EUROPE", "EUROPE"],
-    "category": "GSIB",
+    "category": ["GSIB", "SSM"],
     "comment": "ATTENTION: 'ACA' matches also 'ATLANTIC CASPIAN' in EUROPE. Different Exchange, clean after getting option symbol"
   },
   {
     "name": "ING",
     "ticker": ["ING", "ING"],
     "region": ["USA", "EUROPE"],
-    "category": "GSIB",
+    "category": ["GSIB", "SSM"],
     "comment": "ATTENTION: 'ING' in EUROPE also matches 'Ingenico Group'. Different Exchange, clean after getting option symbol"
   },
   {
@@ -131,14 +131,14 @@
     "name": "Santander",
     "ticker": ["SAN", "SAN"],
     "region": ["USA", "EUROPE"],
-    "category": "GSIB",
+    "category": ["GSIB", "SSM"],
     "comment": "Attention: 'SAN' also matches 'Sanofi' for EUROPE. Different exchange, clean later."
   },
   {
     "name": "Societe Generale",
     "ticker": ["GLE", "SGE"],
     "region": ["EUROPE", "EUROPE"],
-    "category": "GSIB",
+    "category": ["GSIB", "SSM"],
     "comment": "Attention: 'SGE' also matches 'SAGE GROUP' for EUROPE. Different exchange, clean later."
   },
   {
@@ -175,12 +175,263 @@
     "name": "UniCredit",
     "ticker": ["UCG", "CRIN"],
     "region": ["EUROPE", "EUROPE"],
-    "category": "GSIB"
+    "category": ["GSIB", "SSM"]
   },
   {
     "name": "Wells Fargo",
     "ticker": ["WFC"],
     "region": ["USA"],
     "category": "GSIB"
+  },
+  {
+    "name": "Credit Suisse",
+    "ticker": ["CSGN", "CS"],
+    "region": ["EUROPE", "USA"],
+    "category": "Crisis Bank"
+  },
+  {
+    "name": "Silicon Valley Bank",
+    "ticker": ["SIVBQ"],
+    "region": ["USA"],
+    "category": "Crisis Bank",
+    "comment": "stock ticker returned only pink sheet exchange -> is historical data available?"
+  },
+  {
+    "name": "Silvergate",
+    "ticker": ["SICP"],
+    "region": ["USA"],
+    "category": "Crisis Bank",
+    "comment": "stock ticker returned only pink sheet exchange -> is historical data available?"
+  },
+  {
+    "name": "Signature Bank",
+    "ticker": ["SBNY"],
+    "region": ["USA"],
+    "category": "Crisis Bank",
+    "comment": "stock ticker returned only pink sheet exchange -> is historical data available?"
+  },
+  {
+    "name": "First Republic Bank",
+    "ticker": ["FRCB"],
+    "region": ["USA"],
+    "category": "Crisis Bank",
+    "comment": "to check"
+  },
+  {
+    "name": "Europabank SA",
+    "ticker": ["EUROB"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "check"
+  },
+  {
+    "name": "KBC Group NV",
+    "ticker": ["KBC"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "also matches kontron"
+  },
+  {
+    "name": "COMMERZBANK Aktiengesellschaft",
+    "ticker": ["CBK"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "Deutsche Pfandbriefbank AG",
+    "ticker": ["PBB"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "AS LHV Groupaa",
+    "ticker": ["LHV1T"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "AIB Group plc",
+    "ticker": ["A5G"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "Bank of Ireland Group plc",
+    "ticker": ["BIRG"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "ALPHA SERVICES AND HOLDINGS S.A.",
+    "ticker": ["ALPHA"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "National Bank of Greece S.A.",
+    "ticker": ["ETE"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "wrong match (telecom)"
+  },
+  {
+    "name": "Piraeus Financial Holdings S.A.",
+    "ticker": ["TPEIR"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "Banco Bilbao Vizcaya Argentaria, S.A.",
+    "ticker": ["BBVA"],
+    "region": ["USA"],
+    "category": "SSM"
+  },
+  {
+    "name": "Banco de Sabadell, S.A.",
+    "ticker": ["SAB"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "also matches sabmiller"
+  },
+  {
+    "name": "Bankinter, S.A.",
+    "ticker": ["BKT"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "CaixaBank, S.A.",
+    "ticker": ["CABK"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "Unicaja Banco, S.A.",
+    "ticker": ["UNI"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "wrong match"
+  },
+  {
+    "name": "Banca Mediolanum S.p.A.",
+    "ticker": ["BMED"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "BANCA MONTE DEI PASCHI DI SIENA S.p.A.",
+    "ticker": ["BMPS"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "Banca Popolare di Sondrio, Società per Azioni (S.p.A.)",
+    "ticker": ["BPSO"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "Banco BPM S.p.A.",
+    "ticker": ["BAMI"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "BPER Banca S.p.A.",
+    "ticker": ["BPE"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "Credito Emiliano Holding S.p.A.",
+    "ticker": ["CE"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "FinecoBank S.p.A.",
+    "ticker": ["FBK"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "Intesa Sanpaolo S.p.A.",
+    "ticker": ["ISP"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "Mediobanca - Banca di Credito Finanziario S.p.A.",
+    "ticker": ["MB"],
+    "region": ["EUROPE"],
+    "category": "SSM"
+  },
+  {
+    "name": "Bank of Cyprus Holdings Public Limited Company",
+    "ticker": ["BOCH"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "Akcinė bendrovė Šiaulių bankas",
+    "ticker": ["SAB1L"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "ABN AMRO Bank N.V.",
+    "ticker": ["ABN"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "also matches ABN Swiss"
+  },
+  {
+    "name": "BAWAG Group AG",
+    "ticker": ["BG"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "wrong matches"
+  },
+  {
+    "name": "Erste Group Bank AG",
+    "ticker": ["EBS"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "Raiffeisen Bank International AG",
+    "ticker": ["RBI"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "Banco Comercial Português, S.A.",
+    "ticker": ["BCP"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "Nova Ljubljanska banka d.d., Ljubljana",
+    "ticker": ["NLB"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
+  },
+  {
+    "name": "Nova Ljubljanska banka d.d., Ljubljana",
+    "ticker": ["NDA-FI"],
+    "region": ["EUROPE"],
+    "category": "SSM",
+    "comment": "not found"
   }
 ]
