@@ -96,3 +96,12 @@ request <- function(endpoint, symbol=NA_character_, date=NA_character_,
 # }
 
 get_regions <- function() return(c("USA", "EUROPE", "ASIA", "CANADA"))
+
+# write function to request all equities/options
+# wrap script/request_option_contracts in function
+# expand function to give possibility to request either options or stocks
+# request_securities <- function()
+
+
+
+# write function to request all tickers/symbols
