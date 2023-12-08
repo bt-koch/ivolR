@@ -1,3 +1,10 @@
+#' Title
+#'
+#' @param bank_json
+#' @param bank_name
+#'
+#' @return
+#' @export
 get_bank_info <- function(bank_json, bank_name) {
 
   bank <- subset(bank_json, name == bank_name)
