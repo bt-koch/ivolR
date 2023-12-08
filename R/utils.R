@@ -10,5 +10,12 @@ get_bank_info <- function(bank_json, bank_name) {
       category = bank$category
     ))
   }
-  print("sali")
+}
+
+get_bank_by_ticker <- function(bank_json, ticker) {
+
+  return(
+    banks[sapply(banks$ticker, function(x) ticker %in% x), ]
+  )
+
 }
