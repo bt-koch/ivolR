@@ -1,11 +1,17 @@
 rm(list = ls()); gc()
 devtools::load_all()
 
-output_path <- "/Volumes/SanDisk64gb/ivolR"  # if NA, keep in Global Environment
+output_path <- "/Users/belakoch/Documents/coding/ivolR output/run 1 crisis/"  # if NA, keep in Global Environment
 
 from <- "2022-01-01"
 to <- "2023-06-30"
 banks <- jsonlite::fromJSON("input/banks.json")
+
+# banks <- banks[banks$name %in% c("Silvergate", "Signature Bank"),]
+# from <- "2022-02-01"
+# to <- "2022-06-30"
+
+banks <- banks[banks$name == "Credit Suisse",]
 
 for (b in 1:nrow(banks)) {
 
@@ -16,13 +22,20 @@ for (b in 1:nrow(banks)) {
 
   for (i in 1:length(bank$ticker)) {
 
+    if (i == 1) next
+
     df <- data.frame()
     sym <- bank$ticker[i]
     reg <- bank$region[i]
 
     # to do: skip if NA (e.g. groupe BPCE)
+    if (is.na(sym) | is.na(reg)) {
+      warning("NA for Bank ")
+    }
 
+    count <- 1
     for (d in as.character(seq(as.Date(from), as.Date(to), by = "days"))) {
+      cat("\n", count, "of", length(seq(as.Date(from), as.Date(to), by = "days")))
       req <- request(
         endpoint = "equities/eod/option-series-on-date",
         symbol = sym,
@@ -30,6 +43,7 @@ for (b in 1:nrow(banks)) {
         date = d,
         callPut = "C"
       )
+      count <- count+1
 
       if (length(req) > 0) {
         res <- data.frame(
