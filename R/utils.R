@@ -1,9 +1,11 @@
-#' Title
+#' get_bank_info
 #'
-#' @param bank_json
-#' @param bank_name
+#' to do
 #'
-#' @return
+#' @param bank_json a
+#' @param bank_name a
+#'
+#' @return to do
 #' @export
 get_bank_info <- function(bank_json, bank_name) {
 
