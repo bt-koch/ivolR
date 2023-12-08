@@ -23,7 +23,19 @@ manipulate <- function(file) {
 
 }
 
-options_csv_to_list <- function(csv_file, to_ivol_format = T) {
+#' options_csv_to_list
+#'
+#' Convert the CSV obtained from WRDS to same structure as dataset obtained from
+#' ivolatility. Addditionally, add adjusted close price.
+#'
+#' @param csv_file
+#' @param to_ivol_format
+#'
+#' @return
+#' @export
+#'
+#' @examples
+options_csv_to_list <- function(csv_file, to_ivol_format = T, add_stockprice = T) {
 
   df <- read.csv(csv_file)
   option_identifier <- "symbol"
@@ -51,6 +63,11 @@ options_csv_to_list <- function(csv_file, to_ivol_format = T) {
     stock_identifier <- "symbol"
   }
 
+  if (add_stockprice) {
+    # TODO
+    # get stock price, join to df by date
+  }
+
   df$stock_identifier <- df[[stock_identifier]]
 
   output <- list()
@@ -75,6 +92,33 @@ options_csv_to_list <- function(csv_file, to_ivol_format = T) {
   }
 
   return(output)
+
+}
+
+#' Title
+#'
+#' Convert a option chain data.frame into format suitable for ipod estimation
+#' as well as enrich option chain with information relevant for estimation.
+#'
+#' Finished data.frame should have following structure:
+#' - date
+#' - time to maturity
+#' - price (bid+ask/2, stock price for strike price=0)
+#' - risk free rate
+#' - open interest
+#' - weight (open interest_i / sum(open interest))
+#'
+#' @return
+#' @export
+#'
+#' @examples
+enrich_optionchains <- function(data.frame) {
+
+  # TODO
+  # 1. calculate time to maturity (expiration - date)
+  # 2. define price (bid+ask/2 if regular option, stock price for strike price=0)
+  # 3. add risk free rate (join by date)
+  # 4. calculate weight (open interest_i / sum(open interest))
 
 }
 
