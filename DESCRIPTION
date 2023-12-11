@@ -1,12 +1,13 @@
 Package: ivolR
-Title: What the Package Does (One Line, Title Case)
+Title: API wrapper for ivolatility.com with some utilities for IPOD estimation
 Version: 0.0.0.9001
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+  person("bt", "koch", , "first.last@example.com", role = c("aut", "cre"))
+Description: Functionalities to request data from the ivolatility.com API, used
+  for retrieving data for IPOD estimation. Therefore, additionally some functions
+  to prepare data for IPOD estimation are included in this package.
+License: use_gpl3_license()
 Encoding: UTF-8
+URL: https://github.com/bt-koch/ivolR
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

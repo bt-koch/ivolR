@@ -4,7 +4,7 @@
 \alias{enrich_optionchains}
 \title{Title}
 \usage{
-enrich_optionchains(data.frame)
+enrich_optionchains(df)
 }
 \description{
 Convert a option chain data.frame into format suitable for ipod estimation
