@@ -1,7 +1,7 @@
 rm(list=ls()); gc()
 devtools::load_all()
 
-path_symbols <- "/Users/belakoch/Documents/coding/ivolR output/ad hoc cs"
+path_symbols <- "/Users/belakoch/Documents/coding/ivolR output/SSM"
 output_path <- file.path(path_symbols, "option contracts")
 from <- "2022-01-01"
 to <- "2023-06-30"

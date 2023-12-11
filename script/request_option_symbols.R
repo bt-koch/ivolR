@@ -1,7 +1,7 @@
 rm(list = ls()); gc()
 devtools::load_all()
 
-output_path <- "/Users/belakoch/Documents/coding/ivolR output/run 1 crisis/"  # if NA, keep in Global Environment
+output_path <- "/Users/belakoch/Documents/coding/ivolR output/SSM/"  # if NA, keep in Global Environment
 
 from <- "2022-01-01"
 to <- "2023-06-30"
@@ -11,7 +11,10 @@ banks <- jsonlite::fromJSON("input/banks.json")
 # from <- "2022-02-01"
 # to <- "2022-06-30"
 
-banks <- banks[banks$name == "Credit Suisse",]
+banks <- banks[banks$category == "SSM",]
+# Banco Bilbao Vizcaya Argentaria, S.A.
+banks <- banks[11:nrow(banks),]
+
 
 for (b in 1:nrow(banks)) {
 
@@ -21,8 +24,6 @@ for (b in 1:nrow(banks)) {
   stopifnot(length(bank$ticker) == length(bank$region))
 
   for (i in 1:length(bank$ticker)) {
-
-    if (i == 1) next
 
     df <- data.frame()
     sym <- bank$ticker[i]
@@ -34,8 +35,9 @@ for (b in 1:nrow(banks)) {
     }
 
     count <- 1
+    cat("\n")
     for (d in as.character(seq(as.Date(from), as.Date(to), by = "days"))) {
-      cat("\n", count, "of", length(seq(as.Date(from), as.Date(to), by = "days")))
+      cat("\r", count, "of", length(seq(as.Date(from), as.Date(to), by = "days")))
       req <- request(
         endpoint = "equities/eod/option-series-on-date",
         symbol = sym,
