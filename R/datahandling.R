@@ -136,13 +136,40 @@ options_csv_to_list <- function(csv_file, to_ivol_format = T, add_stockprice = T
 #' @export
 #'
 #' @examples
-enrich_optionchains <- function(data.frame) {
+enrich_optionchains <- function(df) {
 
-  # TODO
   # 1. calculate time to maturity (expiration - date)
-  # 2. define price (bid+ask/2 if regular option, stock price for strike price=0)
-  # 3. add risk free rate (join by date)
-  # 4. calculate weight (open interest_i / sum(open interest))
+  df$date <- as.Date(df$date)
+  df$expiration <- as.Date(df$expiration)
+  df$time_to_maturity <- df$expiration - df$date
+
+  # 2. calculate weight
+  df <- transform(df, weight = `open interest` / ave(`open interest`, date, FUN = sum),
+                  check.names = F)
+
+  # 3. define price
+  # 3.1 (bid+ask)/2 if regular option:
+  df$price <- (df$bid + df$ask)/2
+
+  # 3.2 stock price for strike price=0 (artificial contract)
+  temp <- df
+  temp[, c("strike", "ask", "bid", "volume", "open interest", "price", "weight")] <- NA
+  substr(temp$`option symbol`, nchar(temp$`option symbol`)-5, nchar(temp$`option symbol`)) <- "000000"
+  temp <- unique(temp)
+  temp$price <- temp$`Adjusted close`
+  temp$strike <- 0
+  temp$weight <- 1
+  df <- rbind(df, temp)
+
+  # 4. add risk free rate (join by date)
+  # TODO get data from Darwin
+  df$risk_free_rate <- NA
+
+  # 5. return finished df
+  df <- df[, c("symbol", "date", "expiration", "time_to_maturity", "strike",
+             "price", "open interest", "weight", "risk_free_rate")]
+  df <- df[order(df$date, df$strike), ]
+  return(df)
 
 }
 
