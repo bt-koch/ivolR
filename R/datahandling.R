@@ -49,7 +49,7 @@ options_csv_to_list <- function(csv_file, to_ivol_format = T, add_stockprice = T
       `Adjusted close` = NA_real_,
       `option symbol` = df$symbol,
       expiration = df$exdate,
-      strike = df$strike_price,
+      strike = df$strike_price/1000,  # on wrds: strike price * 1000
       `Call/Put` = df$cp_flag,
       style = df$exercise_style,
       ask = df$best_offer,
@@ -61,11 +61,35 @@ options_csv_to_list <- function(csv_file, to_ivol_format = T, add_stockprice = T
     )
     option_identifier <- "option symbol"
     stock_identifier <- "symbol"
+    column_order <- names(df)
   }
 
   if (add_stockprice) {
-    # TODO
-    # get stock price, join to df by date
+    stock_prices <- list.files("input/stock prices", full.names = T)
+    stock_prices <- lapply(stock_prices, read.csv)
+    names(stock_prices) <- sub("(_).*", "", list.files("input/stock prices"))
+
+    stock_prices <- mapply(
+      cbind, stock_prices, "symbol" = names(stock_prices), SIMPLIFY = F
+    )
+
+    stock_prices <- lapply(stock_prices, function(x) {
+      x$date <- as.character(as.Date(x$Datum, format = "%m/%d/%Y"))
+      return(x)
+    })
+
+    stock_prices <- lapply(stock_prices, function(x) {
+      x$`Adjusted close` <- as.numeric(sub("\\$", "", x$Schluss.Letzter))
+      return(x)
+    })
+
+    stock_prices <- do.call(rbind, stock_prices)
+    stock_prices <- stock_prices[, c("symbol", "date", "Adjusted close")]
+
+    df$`Adjusted close` <- NULL
+
+    df <- merge(x = df, y = stock_prices, by = c("symbol", "date"), all.x = T)
+    df <- df[, column_order]
   }
 
   df$stock_identifier <- df[[stock_identifier]]
