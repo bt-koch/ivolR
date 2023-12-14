@@ -4,7 +4,11 @@
 \alias{enrich_optionchains}
 \title{Title}
 \usage{
-enrich_optionchains(df)
+enrich_optionchains(df, rf = get_riskfree("input/euribor6month.csv"))
+}
+\arguments{
+\item{rf}{must contain a column \code{date_id} in format \verb{\%Y-\%m} and a column
+\code{risk_free_rate} containing the risk free rate in decimals}
 }
 \description{
 Convert a option chain data.frame into format suitable for ipod estimation
