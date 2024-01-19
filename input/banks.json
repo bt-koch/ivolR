@@ -214,7 +214,7 @@
     "ticker": ["CSGN", "CS"],
     "region": ["EUROPE", "USA"],
     "category": "Crisis Bank",
-    "exchange": ["SIX", "NYSE"]
+    "exchange": ["ES", "NYSE"]
   },
   {
     "name": "Silicon Valley Bank",
