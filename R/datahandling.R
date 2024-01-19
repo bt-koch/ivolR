@@ -65,7 +65,7 @@ options_csv_to_list <- function(csv_file, to_ivol_format = T, add_stockprice = T
       unadjusted = NA_real_,
       check.names = F
     )
-    option_identifier <- "option symbol"
+    option_identifier <- "option_symbol"
     stock_identifier <- "symbol"
     column_order <- names(df)
   }
@@ -90,7 +90,7 @@ options_csv_to_list <- function(csv_file, to_ivol_format = T, add_stockprice = T
     })
 
     stock_prices <- do.call(rbind, stock_prices)
-    stock_prices <- stock_prices[, c("symbol", "date", "Adjusted close")]
+    stock_prices <- stock_prices[, c("symbol", "date", "adjusted_close")]
 
     df$adjusted_close <- NULL
 
