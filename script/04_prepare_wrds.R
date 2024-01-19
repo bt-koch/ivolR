@@ -1,7 +1,7 @@
 rm(list = ls()); gc()
 devtools::load_all()
 
-path_out <- "/Users/belakoch/Documents/coding/ivolR output/option chains"
+path_out <- "/Users/belakoch/Documents/coding/ivolR output/all banks/option chains"
 
 data <- options_csv_to_list("/Users/belakoch/Documents/coding/ivolR output/wrds/jetdbqpn98tcerko.csv")
 

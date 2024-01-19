@@ -1,7 +1,7 @@
 rm(list = ls()); gc()
 devtools::load_all()
 
-output_path <- "/Users/belakoch/Documents/coding/ivolR output/SSM/"  # if NA, keep in Global Environment
+output_path <- "/Users/belakoch/Documents/coding/ivolR output/all banks/"  # if NA, keep in Global Environment
 
 from <- "2022-01-01"
 to <- "2023-06-30"
@@ -11,10 +11,7 @@ banks <- jsonlite::fromJSON("input/banks.json")
 # from <- "2022-02-01"
 # to <- "2022-06-30"
 
-banks <- banks[banks$category == "SSM",]
-# Banco Bilbao Vizcaya Argentaria, S.A.
-banks <- banks[11:nrow(banks),]
-
+banks <- banks[banks$name == "Barclays",]
 
 for (b in 1:nrow(banks)) {
 

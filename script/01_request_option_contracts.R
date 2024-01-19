@@ -1,12 +1,16 @@
 rm(list=ls()); gc()
 devtools::load_all()
 
-path_symbols <- "/Users/belakoch/Documents/coding/ivolR output/SSM"
-output_path <- file.path(path_symbols, "option contracts")
+path_symbols <- "/Users/belakoch/Documents/coding/ivolR output/all banks"
+output_path <- file.path(path_symbols, "all option contracts")
 from <- "2022-01-01"
 to <- "2023-06-30"
 
+check_existing <- T
+
 for (file in list.files(path_symbols, pattern = "option_symbol_.*\\.rds")) {
+
+  if (file != "option_symbol_BCS.USA.rds") next
 
   # extract ticker
   df <- readRDS(file.path(path_symbols, file))
@@ -22,7 +26,14 @@ for (file in list.files(path_symbols, pattern = "option_symbol_.*\\.rds")) {
   res <- list()
   i <- 1
 
+  if (check_existing) existing <- readRDS(paste0("../ivolR output/all banks/all option contracts/option_contract_", stock, ".rds"))
+
   for (tckr in tickers) {
+
+    if (check_existing) {
+      if (tckr %in% names(existing)) next
+    }
+
     cat(paste0("\n", i, " of ", length(tickers), ": Request ", tckr, "... "))
     req <- request(
       endpoint = "equities/eod/single-stock-option",

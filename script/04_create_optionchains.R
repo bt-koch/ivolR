@@ -3,7 +3,7 @@ devtools::load_all()
 
 banks <- jsonlite::fromJSON("input/banks.json")
 
-path_in <- "/Users/belakoch/Documents/coding/ivolR output/all banks/option contracts"
+path_in <- "/Users/belakoch/Documents/coding/ivolR output/all banks/clean option contracts"
 path_out <- "/Users/belakoch/Documents/coding/ivolR output/all banks/option chains"
 i <- 1
 
