@@ -37,11 +37,10 @@
   },
   {
     "name": "Barclays",
-    "ticker": ["BARC"],
-    "region": ["EUROPE"],
+    "ticker": ["BARC", "BCS"],
+    "region": ["EUROPE", "USA"],
     "category": "GSIB",
-    "exchange": "L",
-    "comment": "BRC double ticker in US, ivolatility returns the wrong one"
+    "exchange": ["L", "NYSE"]
   },
   {
     "name": "BNP Paribas",
@@ -251,10 +250,11 @@
   },
   {
     "name": "Europabank SA",
-    "ticker": ["EUROB"],
-    "region": ["EUROPE"],
+    "ticker": ["NA"],
+    "region": ["NA"],
     "category": "SSM",
-    "comment": "check"
+    "exchange": "NA",
+    "comment": "not available"
   },
   {
     "name": "KBC Group NV",
