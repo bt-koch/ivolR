@@ -4,28 +4,33 @@
     "ticker": ["JPM"],
     "region": ["USA"],
     "category": "GSIB",
-    "exchange": "NYSE"
+    "exchange": "NYSE",
+    "RIC": "JPM.N"
   },
   {
     "name": "Bank of America",
     "ticker": ["BAC"],
     "region": ["USA"],
     "category": "GSIB",
-    "exchange": "NYSE"
+    "exchange": "NYSE",
+    "RIC": "BAC.N"
   },
   {
     "name": "Citigroup",
     "ticker": ["C", "0R01"],
     "region": ["USA", "EUROPE"],
     "category": "GSIB",
-    "exchange": ["NYSE", "NA"]
+    "exchange": ["NYSE", "NA"],
+    "RIC": ["C.N", "NA"]
   },
   {
     "name": "HSBC",
     "ticker": ["HSBC", "0R01"],
     "region": ["USA", "EUROPE"],
     "category": "GSIB",
-    "exchange": ["NYSE", "NA"]
+    "exchange": ["NYSE", "NA"],
+    "comment": "0R01 ticker is Citigroup, not HSBC",
+    "RIC": ["HSBC.N", "NA"]
   },
   {
     "name": "Bank of China",
@@ -33,35 +38,40 @@
     "region": ["ASIA", "ASIA"],
     "category": "GSIB",
     "exchange": ["HKEX", "NA"],
-    "comment": "only 3988 available"
+    "RIC": ["3988.HK", "601988.SS"],
+    "comment": "only 3988 available on ivolatility"
   },
   {
     "name": "Barclays",
     "ticker": ["BARC", "BCS"],
     "region": ["EUROPE", "USA"],
     "category": "GSIB",
-    "exchange": ["L", "NYSE"]
+    "exchange": ["L", "NYSE"],
+    "RIC": ["BARC.L", "BCS"]
   },
   {
     "name": "BNP Paribas",
     "ticker": ["BNP"],
     "region": ["EUROPE"],
     "category": ["GSIB", "SSM"],
-    "exchange": "DE|PA"
+    "exchange": "DE|PA",
+    "RIC": "BNPP.PA"
   },
   {
     "name": "Deutsche Bank",
     "ticker": ["DB", "DBK", "DB"],
     "region": ["USA", "EUROPE", "EUROPE"],
     "category": ["GSIB", "SSM"],
-    "exchange": ["NYSE", "DE", "PA"]
+    "exchange": ["NYSE", "DE", "PA"],
+    "RIC": ["DB", "DBKGn.DE", "NA"]
   },
   {
     "name": "Goldman Sachs",
     "ticker": ["GS"],
     "region": ["USA"],
     "category": "GSIB",
-    "exchange": "NYSE"
+    "exchange": "NYSE",
+    "RIC": "GS"
   },
   {
     "name": "Industrial and Commercial Bank of China",
@@ -69,14 +79,16 @@
     "region": ["ASIA", "ASIA"],
     "category": "GSIB",
     "exchange": ["HKEX", "NA"],
-    "comment": "only 1398 available"
+    "comment": "only 1398 available on ivolatility",
+    "RIC": ["1398.HK", "601398.SS"]
   },
   {
     "name": "Mitsubishi UFJ FG",
     "ticker": ["8306", "MUFG"],
     "region": ["ASIA", "USA"],
     "category": "GSIB",
-    "exchange": ["TSE", "NYSE"]
+    "exchange": ["TSE", "NYSE"],
+    "RIC": ["8306.T", "MUFG.K"]
   },
   {
     "name": "Agricultural Bank of China",
@@ -84,28 +96,32 @@
     "region": ["ASIA", "ASIA"],
     "category": "GSIB",
     "exchange": ["HKEX", "NA"],
-    "comment": "only 1288 available"
+    "comment": "only 1288 available on ivolatility",
+    "RIC": ["1288.HK", "601288.SS"]
   },
   {
     "name": "Bank of New York Mellon",
     "ticker": ["BK"],
     "region": ["USA"],
     "category": "GSIB",
-    "exchange": "NYSE"
+    "exchange": "NYSE",
+    "RIC": "BK"
   },
   {
     "name": "China Construction Bank",
     "ticker": ["939"],
     "region": ["ASIA"],
     "category": "GSIB",
-    "exchange": "HKEX"
+    "exchange": "HKEX",
+    "RIC": "0939.HK"
   },
   {
     "name": "Groupe BPCE",
     "ticker": ["NA"],
     "region": ["NA"],
     "category": "GSIB",
-    "comment": "no ticker found"
+    "comment": "no ticker found",
+    "RIC": "NA"
   },
   {
     "name": "Credit Agricole",
@@ -113,7 +129,8 @@
     "region": ["EUROPE", "EUROPE"],
     "category": ["GSIB", "SSM"],
     "exchange": ["PA", "DE"],
-    "comment": "ATTENTION: 'ACA' traded on 'L' is another corporation"
+    "comment": "ATTENTION: 'ACA' traded on 'L' is another corporation",
+    "RIC": ["CAGR.PA", "NA"]
   },
   {
     "name": "ING",
@@ -121,28 +138,32 @@
     "region": ["USA", "EUROPE"],
     "category": ["GSIB", "SSM"],
     "exchange": ["NYSE", "SIX"],
-    "comment": "ATTENTION: 'ING' traded on 'PA' is another corporation"
+    "comment": "ATTENTION: 'ING' traded on 'PA' is another corporation / ATTENTION: RIC is Euronext Amsterdam",
+    "RIC": ["ING", "INGA.AS"]
   },
   {
     "name": "Mizuho Financial Group",
     "ticker": ["8411", "MFG"],
     "region": ["ASIA", "USA"],
     "category": "GSIB",
-    "exchange": ["TSE", "NYSE"]
+    "exchange": ["TSE", "NYSE"],
+    "RIC": ["8411.T", "NA"]
   },
   {
     "name": "Morgan Stanley",
     "ticker": ["MS"],
     "region": ["USA"],
     "category": "GSIB",
-    "exchange": "NYSE"
+    "exchange": "NYSE",
+    "RIC": "MS"
   },
   {
     "name": "Royal Bank of Canada",
     "ticker": ["RY", "RY"],
     "region": ["CANADA", "USA"],
     "category": "GSIB",
-    "exchange": ["TSX", "NYSE"]
+    "exchange": ["TSX", "NYSE"],
+    "RIC": ["RY.TO", "RY"]
   },
   {
     "name": "Santander",
@@ -150,7 +171,8 @@
     "region": ["USA", "EUROPE"],
     "category": ["GSIB", "SSM"],
     "exchange": ["NYSE", "MC"],
-    "comment": "Attention: 'SAN' traded on 'PA' is another corportation"
+    "comment": "Attention: 'SAN' traded on 'PA' is another corportation",
+    "RIC": ["SAN", "SAN.MC"]
   },
   {
     "name": "Societe Generale",
@@ -158,63 +180,72 @@
     "region": ["EUROPE", "EUROPE"],
     "category": ["GSIB", "SSM"],
     "exchange": ["PA", "DE"],
-    "comment": "Attention: 'SGE' traded on 'L' is another corportation"
+    "comment": "Attention: 'SGE' traded on 'L' is another corportation",
+    "RIC": ["SOGN.PA", "NA"]
   },
   {
     "name": "Standard Chartered",
     "ticker": ["STAN", "2888"],
     "region": ["EUROPE", "ASIA"],
     "category": "GSIB",
-    "exchange": ["L", "HKEX"]
+    "exchange": ["L", "HKEX"],
+    "RIC": ["STAN.L", "NA"]
   },
   {
     "name": "State Street",
     "ticker": "STT",
     "region": "USA",
     "category": "GSIB",
-    "exchange": "NYSE"
+    "exchange": "NYSE",
+    "RIC": "STT"
   },
   {
     "name": "Sumitomo Mitsui Financial Group",
     "ticker": ["8316", "SMFG"],
     "region": ["ASIA", "USA"],
     "category": "GSIB",
-    "exchange": ["TSE", "NYSE"]
+    "exchange": ["TSE", "NYSE"],
+    "RIC": ["8316.T", "SMFG.K"]
   },
   {
     "name": "Toronto-Dominion Bank",
     "ticker": ["TD", "TD"],
     "region": ["CANADA", "USA"],
     "category": "GSIB",
-    "exchange": ["TSX", "NYSE"]
+    "exchange": ["TSX", "NYSE"],
+    "RIC": ["TD.TO", "TD"]
   },
   {
     "name": "UBS",
     "ticker": ["UBSG", "UBS"],
     "region": ["EUROPE", "USA"],
     "category": "GSIB",
-    "exchange": ["SIX", "NYSE"]
+    "exchange": ["SIX", "NYSE"],
+    "RIC": ["UBSG.S", "UBS"]
   },
   {
     "name": "UniCredit",
     "ticker": ["UCG", "CRIN"],
     "region": ["EUROPE", "EUROPE"],
     "category": ["GSIB", "SSM"],
-    "exchange": ["MI", "DE"]
+    "exchange": ["MI", "DE"],
+    "RIC": ["CRDI.MI", "NA"]
   },
   {
     "name": "Wells Fargo",
     "ticker": ["WFC"],
     "region": ["USA"],
     "category": "GSIB",
-    "exchange": "NYSE"
+    "exchange": "NYSE",
+    "RIC": "WFC"
   },
   {
     "name": "Credit Suisse",
     "ticker": ["CSGN", "CS"],
     "region": ["EUROPE", "USA"],
     "category": "Crisis Bank",
-    "exchange": ["ES", "NYSE"]
+    "exchange": ["ES", "NYSE"],
+    "comment": "RIC MISSING FOR NOW"
   },
   {
     "name": "Silicon Valley Bank",
@@ -222,7 +253,7 @@
     "region": ["USA"],
     "category": "Crisis Bank",
     "exchange": "PINK",
-    "comment": "only OTC available, take data from WRDS"
+    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW"
   },
   {
     "name": "Silvergate",
@@ -230,7 +261,7 @@
     "region": ["USA"],
     "category": "Crisis Bank",
     "exchange": "PINK",
-    "comment": "only OTC available, take data from WRDS"
+    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW"
   },
   {
     "name": "Signature Bank",
@@ -238,7 +269,7 @@
     "region": ["USA"],
     "category": "Crisis Bank",
     "exchange": "PINK",
-    "comment": "only OTC available, take data from WRDS"
+    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW"
   },
   {
     "name": "First Republic Bank",
@@ -246,7 +277,7 @@
     "region": ["USA"],
     "category": "Crisis Bank",
     "exchange": "PINK",
-    "comment": "only OTC available, take data from WRDS"
+    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW"
   },
   {
     "name": "Europabank SA",
@@ -254,7 +285,8 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available",
+    "RIC": "NA"
   },
   {
     "name": "KBC Group NV",
@@ -262,21 +294,24 @@
     "region": ["EUROPE"],
     "category": "SSM",
     "exchange": "BE",
-    "comment": "Attention: 'KBC' traded on 'DE' is another corportation"
+    "comment": "Attention: 'KBC' traded on 'DE' is another corportation",
+    "RIC": "KBC.BR"
   },
   {
     "name": "COMMERZBANK Aktiengesellschaft",
     "ticker": ["CBK"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "DE"
+    "exchange": "DE",
+    "RIC": "CBKG.DE"
   },
   {
     "name": "Deutsche Pfandbriefbank AG",
     "ticker": ["PBB"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "DE"
+    "exchange": "DE",
+    "RIC": "PBBG.DE"
   },
   {
     "name": "AS LHV Groupaa",
@@ -284,7 +319,8 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available",
+    "RIC": "NA"
   },
   {
     "name": "AIB Group plc",
@@ -292,14 +328,17 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available",
+    "RIC": "AIBG.I"
   },
   {
     "name": "Bank of Ireland Group plc",
     "ticker": ["BIRG"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "DE"
+    "exchange": "DE",
+    "RIC": "BIRG.I",
+    "comment": "ATTENTION: option traded in germany, stock in ireland"
   },
   {
     "name": "ALPHA SERVICES AND HOLDINGS S.A.",
@@ -307,7 +346,8 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available",
+    "RIC": "ACBr.AT"
   },
   {
     "name": "National Bank of Greece S.A.",
@@ -315,7 +355,8 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available; Attention: we get wrong match for 'ETE'"
+    "comment": "not available; Attention: we get wrong match for 'ETE'",
+    "RIC": "NBGr.AT"
   },
   {
     "name": "Piraeus Financial Holdings S.A.",
@@ -323,14 +364,16 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available (RIC BOPr.AT, BKPG.F)"
   },
   {
     "name": "Banco Bilbao Vizcaya Argentaria, S.A.",
     "ticker": ["BBVA"],
     "region": ["USA"],
     "exchange": "NYSE",
-    "category": "SSM"
+    "category": "SSM",
+    "RIC": "BBVA.K",
+    "comment": "BBVA.MC RIC on Spanish exchange"
   },
   {
     "name": "Banco de Sabadell, S.A.",
@@ -338,21 +381,24 @@
     "region": ["EUROPE"],
     "category": "SSM",
     "exchange": "MC",
-    "comment": "Attention: 'SAB' traded on 'L' is another corportation"
+    "comment": "Attention: 'SAB' traded on 'L' is another corportation",
+    "RIC": "SABE.MC"
   },
   {
     "name": "Bankinter, S.A.",
     "ticker": ["BKT"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MC"
+    "exchange": "MC",
+    "RIC": "BKT.MC"
   },
   {
     "name": "CaixaBank, S.A.",
     "ticker": ["CABK"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MC"
+    "exchange": "MC",
+    "RIC": "CABK.MC"
   },
   {
     "name": "Unicaja Banco, S.A.",
@@ -360,42 +406,48 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available; Attention: we get wrong match for 'UNI'"
+    "comment": "not available; Attention: we get wrong match for 'UNI'",
+    "RIC": "UNI.MC"
   },
   {
     "name": "Banca Mediolanum S.p.A.",
     "ticker": ["BMED"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MI"
+    "exchange": "MI",
+    "RIC": "BMED.MI"
   },
   {
     "name": "BANCA MONTE DEI PASCHI DI SIENA S.p.A.",
     "ticker": ["BMPS"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MI"
+    "exchange": "MI",
+    "RIC": "BMPS.MI"
   },
   {
     "name": "Banca Popolare di Sondrio, Società per Azioni (S.p.A.)",
     "ticker": ["BPSO"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MI"
+    "exchange": "MI",
+    "RIC": "BPSI.MI"
   },
   {
     "name": "Banco BPM S.p.A.",
     "ticker": ["BAMI"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MI"
+    "exchange": "MI",
+    "RIC": "BAMI.MI"
   },
   {
     "name": "BPER Banca S.p.A.",
     "ticker": ["BPE"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MI"
+    "exchange": "MI",
+    "RIC": "EMII.MI"
   },
   {
     "name": "Credito Emiliano Holding S.p.A.",
@@ -403,28 +455,32 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available",
+    "RIC": "NA"
   },
   {
     "name": "FinecoBank S.p.A.",
     "ticker": ["FBK"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MI"
+    "exchange": "MI",
+    "RIC": "FBK.MI"
   },
   {
     "name": "Intesa Sanpaolo S.p.A.",
     "ticker": ["ISP"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MI"
+    "exchange": "MI",
+    "RIC": "ISP.MI"
   },
   {
     "name": "Mediobanca - Banca di Credito Finanziario S.p.A.",
     "ticker": ["MB"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "MI"
+    "exchange": "MI",
+    "RIC": "MDBI.MI"
   },
   {
     "name": "Bank of Cyprus Holdings Public Limited Company",
@@ -432,7 +488,7 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available (RIC BOCH.CY, BOCH.L)"
   },
   {
     "name": "Akcinė bendrovė Šiaulių bankas",
@@ -447,14 +503,15 @@
     "ticker": ["ABN"],
     "region": ["EUROPE"],
     "category": "SSM",
-    "exchange": "AS|SIX"
+    "exchange": "AS|SIX",
+    "RIC": "ABNd.AS"
   },
   {
     "name": "BAWAG Group AG",
     "ticker": ["NA"],
     "region": ["NA"],
     "category": "SSM",
-    "comment": "not available; only wrong matches"
+    "comment": "not available; only wrong matches (RIC: BAWG.VI)"
   },
   {
     "name": "Erste Group Bank AG",
@@ -462,7 +519,7 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available (RIC: ERST.VI)"
   },
   {
     "name": "Raiffeisen Bank International AG",
@@ -470,7 +527,7 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available; only wrong matches"
+    "comment": "not available; only wrong matches (RIC: RBIV.VI)"
   },
   {
     "name": "Banco Comercial Português, S.A.",
@@ -478,7 +535,7 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available (RIC: BCP.LS)"
   },
   {
     "name": "Nova Ljubljanska banka d.d., Ljubljana",
@@ -486,14 +543,6 @@
     "region": ["NA"],
     "category": "SSM",
     "exchange": "NA",
-    "comment": "not available"
-  },
-  {
-    "name": "Nova Ljubljanska banka d.d., Ljubljana",
-    "ticker": ["NA"],
-    "region": ["NA"],
-    "category": "SSM",
-    "exchange": "NA",
-    "comment": "not available"
+    "comment": "not available (RIC: NLBR.LJ)"
   }
 ]
