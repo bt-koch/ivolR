@@ -245,7 +245,8 @@
     "region": ["EUROPE", "USA"],
     "category": "Crisis Bank",
     "exchange": ["ES", "NYSE"],
-    "comment": "RIC MISSING FOR NOW"
+    "comment": "RIC MISSING FOR NOW",
+    "RIC": "CSGN.S^F23"
   },
   {
     "name": "Silicon Valley Bank",
@@ -253,7 +254,8 @@
     "region": ["USA"],
     "category": "Crisis Bank",
     "exchange": "PINK",
-    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW"
+    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW",
+    "RIC": "SIVBQ.PK"
   },
   {
     "name": "Silvergate",
@@ -261,7 +263,8 @@
     "region": ["USA"],
     "category": "Crisis Bank",
     "exchange": "PINK",
-    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW"
+    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW",
+    "RIC": "SICP.PK"
   },
   {
     "name": "Signature Bank",
@@ -269,7 +272,8 @@
     "region": ["USA"],
     "category": "Crisis Bank",
     "exchange": "PINK",
-    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW"
+    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW",
+    "RIC": "SBNY.PK"
   },
   {
     "name": "First Republic Bank",
@@ -277,7 +281,8 @@
     "region": ["USA"],
     "category": "Crisis Bank",
     "exchange": "PINK",
-    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW"
+    "comment": "only OTC available, take data from WRDS | RIC MISSING FOR NOW",
+    "RIC": "FRCB.PK"
   },
   {
     "name": "Europabank SA",
