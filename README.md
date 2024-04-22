@@ -8,14 +8,14 @@ Package can be installed by running:
 remotes::install_github("bt-koch/ivolR")
 ```
 
-First, declare API key as environment variable names `IVOLATILITY_API_KEY` in
+First, declare API key as environment variable named `IVOLATILITY_API_KEY` in
 `.Renviron`. You can do this manually or use utility from `ivolR`:
 
 ```
 ivolR::set_apikey(your_key)
 ```
 
-This will automatically save your API key in the `.Renviron` (and creates one
+This will automatically save your API key in the `.Renviron`-file (or creates one
 if it not yet exists) and by default restarts `R`.
 
 Now everything is set up to request data from the [ivolatility.com](https://www.ivolatility.com/landing/)
